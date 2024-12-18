@@ -1,0 +1,20 @@
+server:
+  port: ${PORT:8083} # Usa la variable de entorno PORT; por defecto será 8083 si no se define.
+
+spring:
+  application:
+    name: pricing-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/msv_pricingdb
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: academy
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
